@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đạt Hồ | Business Analyst Portfolio</title>
-    <meta name="description" content="Portfolio of Đạt Hồ, a data-driven Business Analyst showcasing projects in E-commerce, AI Video Automation, and Data Visualization.">
-    
+    <meta name="description"
+        content="Portfolio of Đạt Hồ, a data-driven Business Analyst specializing in product analysis, Fintech, and E-commerce solutions.">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <!-- Animated Background -->
-    <div class="bg-animated">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container glass">
-            <a href="#home" class="logo">Đạt <span>Hồ</span></a>
-            <ul class="nav-links">
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">My <span>Portfolio</span></a>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact" class="btn-primary small">Contact Me</a></li>
             </ul>
-            <div class="mobile-menu">
+            <div class="mobile-menu" id="mobileMenu">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
@@ -45,22 +44,40 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero">
-            <div class="container hero-content">
-                <div class="hero-text reveal-left">
-                    <h3>Hello, I am</h3>
-                    <h1 class="gradient-text">Đạt Hồ</h1>
-                    <h2>Business Analyst</h2>
-                    <p>I am a recent Management Information Systems graduate from VNU-HCM with a passion for product analysis and development. With foundational experience in Fintech software and E-commerce, I bridge the gap between business needs and impactful technology solutions.</p>
-                    <div class="hero-cta">
-                        <a href="#projects" class="btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
-                        <a href="#contact" class="btn-secondary">Let's Connect</a>
+            <div class="container">
+                <div class="hero-bento">
+
+                    <!-- Main Intro Card -->
+                    <div class="bento-card hero-main-card reveal-left">
+                        <p class="hero-greeting">👋 Hello, I am</p>
+                        <h1 class="hero-name">Hồ Tiến Đạt</h1>
+                        <p class="hero-role">Business Analyst</p>
+                        <p>An E-Commerce graduate from the University of Economics and Law (VNU-HCM) with 6 months of
+                            hands-on experience as a Business Analyst at a Fintech payment company. I specialize in
+                            translating business needs into clear, actionable requirements bridging the gap between
+                            stakeholders and development teams to deliver impactful digital products.</p>
+                        <div class="hero-cta">
+                            <a href="#projects" class="btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
+                            <a href="#contact" class="btn-secondary">Let's Connect</a>
+                            <button class="btn-resume" id="viewResumeBtn" onclick="openResume()">
+                                <i class="fas fa-file-pdf"></i> View Resume
+                            </button>
+                        </div>
+                        <div class="hero-info-chips">
+                            <span class="info-chip"><i class="fas fa-map-marker-alt"></i> Ho Chi Minh City, VN</span>
+                            <span class="info-chip"><i class="fas fa-graduation-cap"></i> E-Commerce — UEL
+                                VNU-HCM</span>
+                            <span class="info-chip available"><i class="fas fa-circle"></i> Open to Work</span>
+                        </div>
                     </div>
-                </div>
-                <div class="hero-image reveal-right">
-                    <div class="image-wrapper glass-card">
-                        <img src="assets/images/avatar.png" alt="Đạt Hồ - Business Analyst">
+
+                    <!-- Avatar Card -->
+                    <div class="bento-card hero-avatar-card reveal-right">
+                        <img src="assets/images/avatar.png" alt="Hồ Tiến Đạt - Business Analyst">
                     </div>
+
                 </div>
+
             </div>
         </section>
 
@@ -71,27 +88,35 @@
                     <span class="subtitle">Discover</span>
                     <h2>About Me</h2>
                 </div>
-                <div class="about-grid">
-                    <div class="about-text glass-card reveal-left">
-                        <p>As a <strong>Management Information Systems</strong> graduate (E-Commerce Concentration) from the <strong>University of Economics and Law (VNU HCM)</strong> with an impressive 8.21 GPA, I have cultivated a robust foundation in both business and technology.</p>
-                        <p>My professional journey includes working as an Associate Product Manager at a Fintech company (Casso) and leading an E-commerce application project. I excel in authoring PRDs, designing UI/UX prototypes using Figma, and collaborating with cross-functional Agile teams to deliver tangible value. I am highly adaptable, eager to learn, and ready to dedicate my full enthusiasm toward achieving company goals.</p>
-                        
-                        <div class="stats-grid">
-                            <div class="stat-box">
-                                <h3>8.21</h3>
-                                <p>GPA (VNU-HCM)</p>
-                            </div>
-                            <div class="stat-box">
-                                <h3>Fintech</h3>
-                                <p>& E-commerce Exp.</p>
-                            </div>
-                            <div class="stat-box">
-                                <h3>Agile</h3>
-                                <p>Scrum Methodologies</p>
-                            </div>
+                <div class="about-bento">
+
+                    <!-- Bio Card -->
+                    <div class="bento-card about-bio-card reveal-left">
+                        <p>An <strong>E-Commerce</strong> graduate from the <strong>University of Economics and Law (VNU-HCM)</strong>, I have built a strong foundation in digital business, process analysis, and technology-driven problem solving.</p>
+                        <p>With 6 months of hands-on experience as a <strong>Business Analyst</strong> at a Fintech payment company, I have contributed to product requirement documentation, stakeholder communication, and cross-functional Agile delivery. I am driven by a genuine passion for understanding business needs and translating them into impactful digital solutions.</p>
+                    </div>
+
+                    <!-- Academic Card -->
+                    <div class="bento-card about-gpa-card reveal-right">
+                        <div class="gpa-badge">🎓 Academic Background</div>
+                        <div class="gpa-value">8.21</div>
+                        <div class="gpa-label">GPA</div>
+                        <div class="gpa-detail">
+                            <span class="gpa-degree">Bachelor's in E-Commerce</span>
+                            <span class="gpa-uni">University of Economics & Law — VNU-HCM</span>
+                        </div>
+                        <div class="gpa-docs">
+                            <button class="gpa-doc-btn" onclick="openDoc('graduation')">
+                                <i class="fas fa-file-alt"></i> Graduation Certificate
+                            </button>
+                            <button class="gpa-doc-btn" onclick="openDoc('transcript')">
+                                <i class="fas fa-list-alt"></i> Academic Transcript
+                            </button>
                         </div>
                     </div>
-                    <div class="about-skills glass-card reveal-right">
+
+                    <!-- Competency Card -->
+                    <div class="bento-card about-competency-card reveal-left">
                         <h3>Core Competencies</h3>
                         <ul class="competency-list">
                             <li><i class="fas fa-check-circle"></i> Requirements Elicitation & PRD Authoring</li>
@@ -101,6 +126,72 @@
                             <li><i class="fas fa-check-circle"></i> Stakeholder Management</li>
                             <li><i class="fas fa-check-circle"></i> User Acceptance Testing (UAT)</li>
                         </ul>
+                    </div>
+
+                    <!-- Experience Highlights Card -->
+                    <div class="bento-card about-exp-card reveal-right">
+                        <h3>Experience Highlights</h3>
+                        <div class="exp-badge-list">
+                            <div class="exp-badge">
+                                <i class="fas fa-building"></i>
+                                Fintech — Casso (APM)
+                            </div>
+                            <div class="exp-badge">
+                                <i class="fas fa-shopping-cart"></i>
+                                E-Commerce Project Lead
+                            </div>
+                            <div class="exp-badge">
+                                <i class="fas fa-users"></i>
+                                Agile / Scrum Teams
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills" style="display:none">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="subtitle">Toolbox</span>
+                    <h2>Skills & Tools</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="bento-card skill-category reveal-up">
+                        <h3>📊 Business Analysis</h3>
+                        <div class="skill-tag-list">
+                            <span class="skill-tag">PRD Writing</span>
+                            <span class="skill-tag">BRD / FRD</span>
+                            <span class="skill-tag">BPMN</span>
+                            <span class="skill-tag">UML</span>
+                            <span class="skill-tag">User Stories</span>
+                            <span class="skill-tag">UAT</span>
+                            <span class="skill-tag">Gap Analysis</span>
+                        </div>
+                    </div>
+                    <div class="bento-card skill-category reveal-up" style="transition-delay: 0.1s;">
+                        <h3>🛠️ Tools & Platforms</h3>
+                        <div class="skill-tag-list">
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Jira</span>
+                            <span class="skill-tag">Confluence</span>
+                            <span class="skill-tag">Draw.io</span>
+                            <span class="skill-tag">Notion</span>
+                            <span class="skill-tag">Google Workspace</span>
+                            <span class="skill-tag">Power BI</span>
+                        </div>
+                    </div>
+                    <div class="bento-card skill-category reveal-up" style="transition-delay: 0.2s;">
+                        <h3>💻 Technical</h3>
+                        <div class="skill-tag-list">
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Python (basic)</span>
+                            <span class="skill-tag">Excel / Power BI</span>
+                            <span class="skill-tag">Data Visualization</span>
+                            <span class="skill-tag">API Documentation</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -113,27 +204,50 @@
                     <span class="subtitle">Journey</span>
                     <h2>Professional Experience</h2>
                 </div>
-                
+
                 <div class="timeline reveal-up">
                     <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
+                        <div class="timeline-content">
                             <div class="timeline-header">
-                                <h3>Business Analyst</h3>
-                                <span class="company">Previous Company Name</span>
-                                <span class="date">Jan 2021 - Present</span>
+                                <h3>Associate Product Manager</h3>
+                                <span class="company">Casso — Fintech</span>
+                                <span class="date">2023 – 2024</span>
                             </div>
-                            <p>Led requirement gathering and analysis for core enterprise applications. Collaborated closely with development teams to ensure successful feature rollouts.</p>
+                            <p>Supported product discovery and delivery at a leading Vietnamese personal finance Fintech
+                                company. Collaborated closely with engineers and designers in an Agile environment.</p>
                             <ul class="responsibility-list">
-                                <li>Conducted stakeholder interviews and created detailed BRDs and FRDs.</li>
-                                <li>Designed process workflows using draw.io and Visio, reducing process bottlenecks by 20%.</li>
+                                <li>Authored Product Requirements Documents (PRDs) for core banking features.</li>
+                                <li>Conducted user interviews and translated insights into actionable user stories.</li>
                                 <li>Facilitated sprint planning, daily stand-ups, and retrospective meetings.</li>
                             </ul>
                             <div class="tech-stack">
                                 <span>Jira</span>
+                                <span>Figma</span>
                                 <span>Confluence</span>
+                                <span>Agile</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>E-Commerce Project Lead (Academic)</h3>
+                                <span class="company">VNU-HCM — Capstone Project</span>
+                                <span class="date">2022 – 2023</span>
+                            </div>
+                            <p>Led a cross-functional student team to design and document a complete B2B/B2C e-commerce
+                                platform from business requirements through to prototype.</p>
+                            <ul class="responsibility-list">
+                                <li>Defined end-to-end business processes using BPMN and UML diagrams.</li>
+                                <li>Created interactive Figma wireframes covering 40+ screens.</li>
+                                <li>Managed project scope, timeline, and stakeholder communication.</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span>Figma</span>
                                 <span>Draw.io</span>
                                 <span>SQL</span>
+                                <span>UML</span>
                             </div>
                         </div>
                     </div>
@@ -149,19 +263,27 @@
                     <h2>Featured Projects</h2>
                 </div>
 
+                <div class="project-filters reveal-up">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="academy">Academy Project</button>
+                    <button class="filter-btn" data-filter="personal">Personal Project</button>
+                </div>
+
                 <div class="projects-grid">
-                    <!-- Project 1: E-Commerce -->
-                    <div class="project-card glass-card reveal-up">
+                    <!-- Project 1 -->
+                    <div class="project-card reveal-up" data-category="academy">
                         <div class="project-image">
                             <img src="assets/images/ecommerce.png" alt="E-Commerce BA Project">
                             <div class="project-overlay">
-                                <a href="#" class="view-btn"><i class="fas fa-external-link-alt"></i> View Case Study</a>
+                                <a href="#" class="view-btn"><i class="fas fa-external-link-alt"></i> View Case
+                                    Study</a>
                             </div>
                         </div>
                         <div class="project-info">
                             <span class="project-category">E-Commerce Platform</span>
                             <h3>B2B / B2C E-commerce System</h3>
-                            <p>Comprehensive business analysis for a scalable e-commerce platform. Defined user stories, created interactive wireframes, and mapped out the end-to-end checkout flow.</p>
+                            <p>Comprehensive business analysis for a scalable e-commerce platform. Defined user stories,
+                                created interactive wireframes, and mapped the end-to-end checkout flow.</p>
                             <div class="tech-stack">
                                 <span>Figma</span>
                                 <span>User Stories</span>
@@ -170,38 +292,42 @@
                         </div>
                     </div>
 
-                    <!-- Project 2: AI Video -->
-                    <div class="project-card glass-card reveal-up" style="transition-delay: 0.1s;">
+                    <!-- Project 2 -->
+                    <div class="project-card reveal-up" data-category="personal" style="transition-delay: 0.1s;">
                         <div class="project-image">
                             <img src="assets/images/aivideo.png" alt="AI Video Automation">
                             <div class="project-overlay">
-                                <a href="#" class="view-btn"><i class="fas fa-external-link-alt"></i> View Case Study</a>
+                                <a href="#" class="view-btn"><i class="fas fa-external-link-alt"></i> View Case
+                                    Study</a>
                             </div>
                         </div>
                         <div class="project-info">
                             <span class="project-category">Automation Pipeline</span>
                             <h3>AI Video & Social Automation</h3>
-                            <p>Analyzed requirements for an automated pipeline generating AI videos and automatically distributing them to social platforms like TikTok. Handled process edge-cases and error handling flows.</p>
+                            <p>Analyzed requirements for an automated pipeline generating AI videos and distributing
+                                them to TikTok. Handled process edge-cases and error-handling flows.</p>
                             <div class="tech-stack">
                                 <span>Process Mapping</span>
-                                <span>API Integration Auth</span>
+                                <span>API Docs</span>
                                 <span>Agile</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 3: Dashboard -->
-                    <div class="project-card glass-card reveal-up" style="transition-delay: 0.2s;">
+                    <!-- Project 3 -->
+                    <div class="project-card reveal-up" data-category="academy" style="transition-delay: 0.2s;">
                         <div class="project-image">
-                            <img src="assets/images/dashboard.png" alt="Data Visualization Dashboard">
+                            <img src="assets/images/dashboard.png" alt="KPI Dashboard">
                             <div class="project-overlay">
-                                <a href="#" class="view-btn"><i class="fas fa-external-link-alt"></i> View Case Study</a>
+                                <a href="#" class="view-btn"><i class="fas fa-external-link-alt"></i> View Case
+                                    Study</a>
                             </div>
                         </div>
                         <div class="project-info">
                             <span class="project-category">Data Analytics</span>
                             <h3>Executive KPI Dashboard</h3>
-                            <p>Transformed raw operational data into actionable insights through interactive dashboards. Elicited KPI definitions from C-level executives and designed the visual layout.</p>
+                            <p>Transformed raw operational data into actionable insights through interactive dashboards.
+                                Elicited KPI definitions from executives and designed the visual layout.</p>
                             <div class="tech-stack">
                                 <span>Power BI</span>
                                 <span>SQL</span>
@@ -215,19 +341,21 @@
 
         <!-- Contact Section -->
         <section id="contact" class="contact">
-            <div class="container glass-card reveal-up contact-container">
-                <div class="contact-info">
-                    <h2>Let's build something amazing together</h2>
-                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
-                    <div class="contact-links">
-                        <a href="mailto:hotiendat117@gmail.com" class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            hotiendat117@gmail.com
-                        </a>
-                        <a href="https://github.com/htdat117" target="_blank" class="contact-item">
-                            <i class="fab fa-github"></i>
-                            github.com/htdat117
-                        </a>
+            <div class="container">
+                <div class="contact-bento reveal-up">
+                    <div class="contact-card">
+                        <h2>Let's build something amazing together</h2>
+                        <p>I'm open to new opportunities, creative ideas, and meaningful collaborations.</p>
+                        <div class="contact-links">
+                            <a href="mailto:hotiendat117@gmail.com" class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                hotiendat117@gmail.com
+                            </a>
+                            <a href="https://github.com/htdat117" target="_blank" class="contact-item">
+                                <i class="fab fa-github"></i>
+                                github.com/htdat117
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -239,8 +367,8 @@
             <div class="footer-content">
                 <div class="footer-logo">Đạt <span>Hồ</span></div>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/htdat117"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/htdat117" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 </div>
             </div>
             <div class="copyright">
@@ -251,5 +379,81 @@
 
     <!-- Custom JS -->
     <script src="js/main.js"></script>
+
+    <!-- Resume PDF Modal -->
+    <div id="resumeModal" class="resume-modal" onclick="closeResumeOnBg(event)">
+        <div class="resume-modal-content">
+            <div class="resume-modal-header">
+                <span>CV — Hồ Tiến Đạt</span>
+                <div class="resume-modal-actions">
+                    <a href="CV_BusinessAnalyst_HoTienDat (1).pdf" download class="resume-download-btn">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                    <button class="resume-close-btn" onclick="closeResume()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <iframe src="CV_BusinessAnalyst_HoTienDat (1).pdf#zoom=125" class="resume-iframe"
+                title="Resume PDF"></iframe>
+        </div>
+    </div>
+
+    <!-- Document PDF Modal (Graduation / Transcript) -->
+    <div id="docModal" class="resume-modal" onclick="closeDocOnBg(event)">
+        <div class="resume-modal-content">
+            <div class="resume-modal-header">
+                <span id="docModalTitle">Document</span>
+                <div class="resume-modal-actions">
+                    <a id="docDownloadBtn" href="#" download class="resume-download-btn">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                    <button class="resume-close-btn" onclick="closeDoc()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <iframe id="docIframe" src="" class="resume-iframe" title="Document PDF"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function openResume() {
+            document.getElementById('resumeModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeResume() {
+            document.getElementById('resumeModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        function closeResumeOnBg(e) {
+            if (e.target === document.getElementById('resumeModal')) closeResume();
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') { closeResume(); closeDoc(); }
+        });
+
+        const docConfig = {
+            graduation: { title: 'Graduation Certificate', src: 'assets/docs/graduation-certificate.pdf#zoom=125' },
+            transcript:  { title: 'Academic Transcript',   src: 'assets/docs/transcript.pdf#zoom=125' }
+        };
+        function openDoc(type) {
+            const cfg = docConfig[type];
+            document.getElementById('docModalTitle').textContent = cfg.title;
+            document.getElementById('docIframe').src = cfg.src;
+            document.getElementById('docDownloadBtn').href = cfg.src.split('#')[0];
+            document.getElementById('docModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeDoc() {
+            document.getElementById('docModal').classList.remove('active');
+            document.getElementById('docIframe').src = '';
+            document.body.style.overflow = '';
+        }
+        function closeDocOnBg(e) {
+            if (e.target === document.getElementById('docModal')) closeDoc();
+        }
+    </script>
 </body>
+
 </html>
