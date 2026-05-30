@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đạt Hồ | Business Analyst Portfolio</title>
+    <title>HỒ TIẾN ĐẠT | Business Analyst Portfolio</title>
     <meta name="description"
-        content="Portfolio of Đạt Hồ, a data-driven Business Analyst specializing in product analysis, Fintech, and E-commerce solutions.">
+        content="Portfolio of HỒ TIẾN ĐẠT, a data-driven Business Analyst specializing in product analysis, Fintech, and E-commerce solutions.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -43,42 +43,57 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="hero">
+        <section id="home" class="hero new-hero">
+            <div class="hero-bg-shapes"></div>
             <div class="container">
-                <div class="hero-bento">
+                <div class="hero-split">
 
-                    <!-- Main Intro Card -->
-                    <div class="bento-card hero-main-card reveal-left">
-                        <p class="hero-greeting">👋 Hello, I am</p>
-                        <h1 class="hero-name">Hồ Tiến Đạt</h1>
-                        <p class="hero-role">Business Analyst</p>
-                        <p>An E-Commerce graduate from the University of Economics and Law (VNU-HCM) with 6 months of
-                            hands-on experience as a Business Analyst at a Fintech payment company. I specialize in
-                            translating business needs into clear, actionable requirements bridging the gap between
-                            stakeholders and development teams to deliver impactful digital products.</p>
-                        <div class="hero-cta">
-                            <a href="#projects" class="btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
-                            <a href="#contact" class="btn-secondary">Let's Connect</a>
-                            <button class="btn-resume" id="viewResumeBtn" onclick="openResume()">
+                    <!-- Avatar Column -->
+                    <div class="hero-left reveal-left">
+                        <div class="avatar-wrapper">
+                            <div class="avatar-circle">
+                                <img src="assets/images/avatar.png" alt="Hồ Tiến Đạt - Business Analyst">
+                            </div>
+                            <!-- Floating Badges -->
+                            <div class="floating-badge badge-top-right">
+                                <div class="badge-icon">🏆</div>
+                                <div class="badge-text">
+                                    <strong>6+ Months</strong>
+                                    <span>Experience</span>
+                                </div>
+                            </div>
+                            <div class="floating-badge badge-bottom-left">
+                                <div class="badge-icon">✨</div>
+                                <div class="badge-text">
+                                    <strong>Fintech & E-Commerce</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Intro Column -->
+                    <div class="hero-right reveal-right">
+                        <h1 class="hero-title">
+                            Hi, I'm Hồ Tiến Đạt,<br>
+                            <span class="highlight">Business Analyst</span>
+                        </h1>
+                        <p class="hero-desc">
+                            I am a Business Analyst with hands-on experience in the Fintech industry. I am currently
+                            seeking new opportunities where I can apply my analytical skills to deliver impactful
+                            digital products. This portfolio will help you understand more about my projects and the
+                            value I can bring to your team.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn-primary">View My Work <i class="fas fa-arrow-right"></i></a>
+                            <button class="btn-secondary" id="viewResumeBtn" onclick="openResume()">
                                 <i class="fas fa-file-pdf"></i> View Resume
                             </button>
                         </div>
-                        <div class="hero-info-chips">
-                            <span class="info-chip"><i class="fas fa-map-marker-alt"></i> Ho Chi Minh City, VN</span>
-                            <span class="info-chip"><i class="fas fa-graduation-cap"></i> E-Commerce — UEL
-                                VNU-HCM</span>
-                            <span class="info-chip available"><i class="fas fa-circle"></i> Open to Work</span>
+                        <div class="availability-pill" style="margin-top: 1rem; margin-bottom: 0;">
+                            <span class="dot"></span> Open to Work
                         </div>
                     </div>
-
-                    <!-- Avatar Card -->
-                    <div class="bento-card hero-avatar-card reveal-right">
-                        <img src="assets/images/avatar.png" alt="Hồ Tiến Đạt - Business Analyst">
-                    </div>
-
                 </div>
-
-            </div>
         </section>
 
         <!-- About Section -->
@@ -92,8 +107,13 @@
 
                     <!-- Bio Card -->
                     <div class="bento-card about-bio-card reveal-left">
-                        <p>An <strong>E-Commerce</strong> graduate from the <strong>University of Economics and Law (VNU-HCM)</strong>, I have built a strong foundation in digital business, process analysis, and technology-driven problem solving.</p>
-                        <p>With 6 months of hands-on experience as a <strong>Business Analyst</strong> at a Fintech payment company, I have contributed to product requirement documentation, stakeholder communication, and cross-functional Agile delivery. I am driven by a genuine passion for understanding business needs and translating them into impactful digital solutions.</p>
+                        <p>An <strong>E-Commerce</strong> graduate from the <strong>University of Economics and Law
+                                (VNU-HCM)</strong>, I have built a strong foundation in digital business, process
+                            analysis, and technology-driven problem solving.</p>
+                        <p>With 6 months of hands-on experience as a <strong>Business Analyst</strong> at a Fintech
+                            payment company, I have contributed to product requirement documentation, stakeholder
+                            communication, and cross-functional Agile delivery. I am driven by a genuine passion for
+                            understanding business needs and translating them into impactful digital solutions.</p>
                     </div>
 
                     <!-- Academic Card -->
@@ -365,14 +385,14 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">Đạt <span>Hồ</span></div>
+                <div class="footer-logo">Portfolio <span>HO TIEN DAT</span></div>
                 <div class="social-links">
                     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://github.com/htdat117" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2026 Đạt Hồ. All rights reserved.</p>
+                <p>&copy; 2026 HO TIEN DAT. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -435,7 +455,7 @@
 
         const docConfig = {
             graduation: { title: 'Graduation Certificate', src: 'assets/docs/graduation-certificate.pdf#zoom=125' },
-            transcript:  { title: 'Academic Transcript',   src: 'assets/docs/transcript.pdf#zoom=125' }
+            transcript: { title: 'Academic Transcript', src: 'assets/docs/transcript.pdf#zoom=125' }
         };
         function openDoc(type) {
             const cfg = docConfig[type];
