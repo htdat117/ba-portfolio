@@ -835,6 +835,32 @@ h3 { font-size: 1.35rem; font-weight: 650; }
 
 .responsibility-list li { margin-bottom: 0.4rem; }
 
+.experience-project {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.experience-project:first-of-type {
+    margin-top: 1rem;
+    padding-top: 0;
+    border-top: none;
+}
+
+.project-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-title i {
+    color: var(--accent);
+}
+
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
@@ -985,6 +1011,48 @@ h3 { font-size: 1.35rem; font-weight: 650; }
     line-height: 1.65;
     margin-bottom: 1.25rem;
     flex: 1;
+}
+
+.project-docs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    border-top: 1px dashed rgba(0, 0, 0, 0.08);
+    padding-top: 1rem;
+}
+
+.doc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 6px 10px;
+    background: var(--bg-muted);
+    color: var(--text-secondary);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-family: inherit;
+    font-weight: 600;
+    transition: var(--transition);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    cursor: pointer;
+}
+
+.doc-btn i {
+    font-size: 0.85rem;
+    color: var(--accent);
+}
+
+.doc-btn:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.doc-btn:hover i {
+    color: #fff;
 }
 
 /* =========================================
