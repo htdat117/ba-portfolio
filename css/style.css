@@ -1536,10 +1536,8 @@ footer {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    padding: 1.25rem;
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    flex-direction: column;
     cursor: pointer;
     transition: var(--transition);
     position: relative;
@@ -1552,52 +1550,60 @@ footer {
     border-color: var(--accent);
 }
 
-.exp-project-card .card-icon {
-    width: 45px;
-    height: 45px;
-    border-radius: 12px;
+.card-cover {
+    width: 100%;
+    height: 180px;
+    background: var(--bg-muted);
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
-    flex-shrink: 0;
+    border-bottom: 1px solid var(--border);
 }
 
-.exp-project-card .card-content {
-    flex-grow: 1;
+.card-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.exp-project-card:hover .card-cover img {
+    transform: scale(1.05);
+}
+
+.card-content-wrap {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.card-header-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.card-title-icon {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
 }
 
 .exp-project-card h4 {
-    margin: 0 0 0.25rem 0;
-    font-size: 1.05rem;
+    margin: 0;
+    font-size: 1.1rem;
     color: var(--text-primary);
 }
 
-.exp-project-card p {
-    margin: 0 0 0.4rem 0;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.4;
-}
-
-.exp-project-card .card-duration {
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    background: var(--bg-alt);
-    padding: 2px 8px;
+.card-tag {
+    align-self: flex-start;
+    background: rgba(255, 171, 0, 0.15);
+    color: #b77900;
+    padding: 4px 10px;
     border-radius: 4px;
-}
-
-.exp-project-card .card-arrow {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    transition: var(--transition);
-}
-
-.exp-project-card:hover .card-arrow {
-    color: var(--accent);
-    transform: translateX(3px);
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
 @media (max-width: 768px) {

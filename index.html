@@ -282,27 +282,33 @@
                             <p data-i18n="expRoleDesc">Drove product discovery and delivery at a dynamic Fintech startup. Managed key digital product initiatives from idea validation to MVP launch in a fast-paced Agile environment.</p>
 
                             <!-- Experience Projects Grid -->
-                            <div class="exp-projects-grid" style="margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="exp-projects-grid" style="margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
                                 <!-- Project 1 Card -->
                                 <div class="exp-project-card" onclick="openProjectModal('xinvoice')">
-                                    <div class="card-icon" style="background: rgba(79, 124, 255, 0.1); color: var(--accent);"><i class="fas fa-file-invoice"></i></div>
-                                    <div class="card-content">
-                                        <h4 data-i18n="expProj1CardTitle">Project 1: X Invoice</h4>
-                                        <p data-i18n="expProj1CardDesc">E-Invoice Platform (Idea Validation & MVP Phase)</p>
-                                        <span class="card-duration">4 Months</span>
+                                    <div class="card-cover">
+                                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="X Invoice Web System">
                                     </div>
-                                    <i class="fas fa-chevron-right card-arrow"></i>
+                                    <div class="card-content-wrap">
+                                        <div class="card-header-row">
+                                            <i class="fas fa-file-invoice card-title-icon"></i>
+                                            <h4 data-i18n="expProj1CardTitle">E-Invoice Service Platform</h4>
+                                        </div>
+                                        <div class="card-tag">Fintech / E-Invoice</div>
+                                    </div>
                                 </div>
 
                                 <!-- Project 2 Card -->
                                 <div class="exp-project-card" onclick="openProjectModal('payos')">
-                                    <div class="card-icon" style="background: rgba(255, 159, 67, 0.1); color: #ff9f43;"><i class="fas fa-credit-card"></i></div>
-                                    <div class="card-content">
-                                        <h4 data-i18n="expProj2CardTitle">Project 2: PayOS</h4>
-                                        <p data-i18n="expProj2CardDesc">Payment Gateway & Core Product Integration</p>
-                                        <span class="card-duration">2 Months</span>
+                                    <div class="card-cover">
+                                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop" alt="PayOS Web System">
                                     </div>
-                                    <i class="fas fa-chevron-right card-arrow"></i>
+                                    <div class="card-content-wrap">
+                                        <div class="card-header-row">
+                                            <i class="fas fa-qrcode card-title-icon"></i>
+                                            <h4 data-i18n="expProj2CardTitle">Payment Gateway Platform</h4>
+                                        </div>
+                                        <div class="card-tag">Fintech / Payment</div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -575,7 +581,7 @@
         // Notion Modal Logic
         const projectData = {
             'xinvoice': {
-                title: 'Project 1: X Invoice - E-Invoice Platform',
+                title: 'Project 1: E-Invoice Service Platform',
                 period: '4 Months (Sep 2025 - Jan 2026)',
                 client: 'Internal Startup Initiative (Casso)',
                 domain: 'Fintech / E-Invoice',
@@ -593,7 +599,7 @@
                 docsBtn: `<button onclick="openDoc('slide_xinvoice')" class="doc-btn doc-btn-interactive" style="margin-top:15px; font-size: 0.9rem;"><i class="fas fa-file-pdf"></i> View Project Overview</button>`
             },
             'payos': {
-                title: 'Project 2: PayOS - Payment Gateway Integration',
+                title: 'Project 2: Payment Gateway Platform',
                 period: '2 Months',
                 client: 'B2B Merchants',
                 domain: 'Fintech / Payment',
