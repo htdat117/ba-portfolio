@@ -717,6 +717,22 @@ h3 { font-size: 1.35rem; font-weight: 650; }
     flex-shrink: 0;
 }
 
+.about-coursework-card {
+    grid-column: 1;
+    grid-row: 2;
+    background: var(--accent-amber-soft);
+    border-color: rgba(245, 166, 35, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.about-coursework-card h3 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
 .about-exp-card {
     grid-column: 2;
     grid-row: 2;
@@ -759,7 +775,7 @@ h3 { font-size: 1.35rem; font-weight: 650; }
 /* =========================================
    EXPERIENCE SECTION
    ========================================= */
-.experience { background: var(--bg); }
+.experience { background: var(--bg-muted); }
 
 .timeline {
     max-width: 780px;
@@ -879,7 +895,7 @@ h3 { font-size: 1.35rem; font-weight: 650; }
 /* =========================================
    PROJECTS SECTION — Bento Grid
    ========================================= */
-.projects { background: var(--bg-muted); }
+.projects { background: var(--bg); }
 
 .project-filters {
     display: flex;
@@ -1058,7 +1074,7 @@ h3 { font-size: 1.35rem; font-weight: 650; }
 /* =========================================
    CONTACT SECTION
    ========================================= */
-.contact { background: var(--bg); }
+.contact { background: var(--bg-muted); }
 
 .contact-bento {
     max-width: 680px;
@@ -1197,13 +1213,14 @@ footer {
 }
 
 .skill-tag {
-    padding: 6px 14px;
-    background: var(--bg-muted);
+    padding: 8px 18px;
+    background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 20px;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    font-weight: 500;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
     transition: var(--transition);
 }
 
@@ -1211,6 +1228,42 @@ footer {
     background: var(--accent-soft);
     color: var(--accent);
     border-color: rgba(79, 124, 255, 0.3);
+}
+
+.tool-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    width: 105px;
+    height: 105px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    gap: 12px;
+}
+
+.tool-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent);
+}
+
+.tool-card img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.tool-card span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    line-height: 1.2;
 }
 
 /* =========================================
@@ -1439,4 +1492,292 @@ footer {
     border: none;
     min-height: 0;
     height: calc(90vh - 60px);
+}
+
+/* =========================================
+   LANGUAGE SWITCHER
+   ========================================= */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 12px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.lang-btn:hover {
+    color: var(--accent);
+}
+
+.lang-btn.active {
+    color: var(--accent);
+}
+
+.lang-divider {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   Experience Project Cards (Replaces long list)
+   ========================================================================== */
+
+.exp-project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.exp-project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent);
+}
+
+.exp-project-card .card-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.exp-project-card .card-content {
+    flex-grow: 1;
+}
+
+.exp-project-card h4 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+}
+
+.exp-project-card p {
+    margin: 0 0 0.4rem 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.exp-project-card .card-duration {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: var(--bg-alt);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.exp-project-card .card-arrow {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.exp-project-card:hover .card-arrow {
+    color: var(--accent);
+    transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+    .exp-projects-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ==========================================================================
+   Notion Style Modal
+   ========================================================================== */
+
+.notion-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.notion-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.notion-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+}
+
+.notion-modal-container {
+    background: var(--bg-card);
+    width: 90%;
+    max-width: 800px;
+    max-height: 85vh;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 10000;
+    overflow-y: auto;
+    transform: scale(0.95) translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid var(--border);
+}
+
+.notion-modal.active .notion-modal-container {
+    transform: scale(1) translateY(0);
+}
+
+.notion-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--bg-alt);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.notion-close-btn:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.notion-modal-content {
+    padding: 2.5rem;
+    font-family: var(--font-body);
+}
+
+.notion-header {
+    margin-bottom: 2rem;
+}
+
+.notion-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.notion-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+}
+
+.notion-meta {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+}
+
+.notion-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.notion-tag {
+    background: rgba(255, 171, 0, 0.15); /* Yellow tint like Notion */
+    color: #b77900;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Notion Table */
+.notion-table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+.notion-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.notion-table td {
+    border: 1px solid var(--border);
+    padding: 12px 16px;
+    vertical-align: top;
+    line-height: 1.6;
+}
+
+.notion-td-label {
+    background: var(--bg-alt);
+    font-weight: 500;
+    width: 25%;
+    min-width: 150px;
+    color: var(--text-secondary);
+}
+
+.notion-table ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.notion-table li {
+    margin-bottom: 8px;
+}
+.notion-table li:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .notion-modal-content {
+        padding: 1.5rem;
+    }
+    .notion-td-label {
+        width: 35%;
+    }
+    .notion-header h2 {
+        font-size: 1.5rem;
+    }
 }

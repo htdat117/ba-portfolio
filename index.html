@@ -7,6 +7,9 @@
     <title>HỒ TIẾN ĐẠT | Business Analyst Portfolio</title>
     <meta name="description"
         content="Portfolio of HỒ TIẾN ĐẠT, a data-driven Business Analyst specializing in product analysis, Fintech, and E-commerce solutions.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo_d.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,13 +30,21 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">My <span>Portfolio</span></a>
+            <a href="#home" class="logo" style="display: flex; align-items: center; gap: 8px;">
+                <img src="assets/images/logo_d.png" alt="Dat Logo" style="height: 32px; width: 32px; border-radius: 6px;">
+                My <span>Portfolio</span>
+            </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact" class="btn-primary small">Contact Me</a></li>
+                <li><a href="#about" data-i18n="navAbout">About</a></li>
+                <li><a href="#skills" data-i18n="navSkills">Skills</a></li>
+                <li><a href="#experience" data-i18n="navExperience">Experience</a></li>
+                <li><a href="#projects" data-i18n="navProjects">Projects</a></li>
+                <li><a href="#contact" class="btn-primary small" data-i18n="navContact">Contact Me</a></li>
+                <li class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" data-lang="vi">VI</button>
+                </li>
             </ul>
             <div class="mobile-menu" id="mobileMenu">
                 <i class="fas fa-bars"></i>
@@ -57,8 +68,8 @@
                             <!-- Floating Badges -->
                             <div class="floating-badge badge-top-right">
                                 <div class="badge-icon">🏆</div>
-                                <div class="badge-text">
-                                    <strong>6+ Months</strong>
+                                <div class="badge-text" data-i18n="heroExpBadge">
+                                    <strong>6+ Months</strong><br>
                                     <span>Experience</span>
                                 </div>
                             </div>
@@ -73,23 +84,23 @@
 
                     <!-- Intro Column -->
                     <div class="hero-right reveal-right">
-                        <h1 class="hero-title">
+                        <h1 class="hero-title" data-i18n="heroHi">
                             Hi, I'm Hồ Tiến Đạt,<br>
                             <span class="highlight">Business Analyst</span>
                         </h1>
-                        <p class="hero-desc">
+                        <p class="hero-desc" data-i18n="heroDesc">
                             I am a Business Analyst with hands-on experience in the Fintech industry. I am currently
                             seeking new opportunities where I can apply my analytical skills to deliver impactful
                             digital products. This portfolio will help you understand more about my projects and the
                             value I can bring to your team.
                         </p>
                         <div class="hero-actions">
-                            <a href="#projects" class="btn-primary">View My Work <i class="fas fa-arrow-right"></i></a>
-                            <button class="btn-secondary" id="viewResumeBtn" onclick="openResume()">
+                            <a href="#projects" class="btn-primary" data-i18n="heroBtnWork">View My Work <i class="fas fa-arrow-right"></i></a>
+                            <button class="btn-secondary" id="viewResumeBtn" onclick="openResume()" data-i18n="heroBtnResume">
                                 <i class="fas fa-file-pdf"></i> View Resume
                             </button>
                         </div>
-                        <div class="availability-pill" style="margin-top: 1rem; margin-bottom: 0;">
+                        <div class="availability-pill" style="margin-top: 1rem; margin-bottom: 0;" data-i18n="heroAvailability">
                             <span class="dot"></span> Open to Work
                         </div>
                     </div>
@@ -100,17 +111,17 @@
         <section id="about" class="about">
             <div class="container">
                 <div class="section-header reveal-up">
-                    <span class="subtitle">Discover</span>
-                    <h2>About Me</h2>
+                    <span class="subtitle" data-i18n="aboutDiscover">Discover</span>
+                    <h2 data-i18n="aboutTitle">About Me</h2>
                 </div>
                 <div class="about-bento">
 
                     <!-- Bio Card -->
                     <div class="bento-card about-bio-card reveal-left">
-                        <p>An <strong>E-Commerce</strong> graduate from the <strong>University of Economics and Law
+                        <p data-i18n="aboutP1">An <strong>E-Commerce</strong> graduate from the <strong>University of Economics and Law
                                 (VNU-HCM)</strong>, I have built a strong foundation in digital business, process
                             analysis, and technology-driven problem solving.</p>
-                        <p>With 6 months of hands-on experience as a <strong>Business Analyst</strong> at a Fintech
+                        <p data-i18n="aboutP2">With 6 months of hands-on experience as a <strong>Business Analyst</strong> at a Fintech
                             payment company, I have contributed to product requirement documentation, stakeholder
                             communication, and cross-functional Agile delivery. I am driven by a genuine passion for
                             understanding business needs and translating them into impactful digital solutions.</p>
@@ -118,64 +129,53 @@
 
                     <!-- Academic Card -->
                     <div class="bento-card about-gpa-card reveal-right">
-                        <div class="gpa-badge">🎓 Academic Background</div>
+                        <div class="gpa-badge" data-i18n="aboutGpaBadge">🎓 Academic Background</div>
                         <div class="gpa-value">8.21</div>
                         <div class="gpa-label">GPA</div>
                         <div class="gpa-detail">
-                            <span class="gpa-degree">Bachelor's in E-Commerce</span>
-                            <span class="gpa-uni">University of Economics & Law — VNU-HCM</span>
+                            <span class="gpa-degree" data-i18n="aboutDegree">Bachelor's in E-Commerce</span>
+                            <span class="gpa-uni" data-i18n="aboutUni">University of Economics & Law — VNU-HCM</span>
                         </div>
                         <div class="gpa-docs">
-                            <button class="gpa-doc-btn" onclick="openDoc('graduation')">
+                            <button class="gpa-doc-btn" onclick="openDoc('graduation')" data-i18n="aboutCertBtn1">
                                 <i class="fas fa-file-alt"></i> Graduation Certificate
                             </button>
-                            <button class="gpa-doc-btn" onclick="openDoc('transcript')">
+                            <button class="gpa-doc-btn" onclick="openDoc('transcript')" data-i18n="aboutCertBtn2">
                                 <i class="fas fa-list-alt"></i> Academic Transcript
                             </button>
                         </div>
                     </div>
 
-                    <!-- Competency Card -->
-                    <div class="bento-card about-competency-card reveal-left">
-                        <h3>Core Skills & Expertise</h3>
-                        
-                        <div style="margin-bottom: 1.2rem;">
-                            <h4 style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 6px;"><i class="fas fa-robot" style="color: var(--accent-green);"></i> AI Automation & Vibe Coding</h4>
-                            <div class="tech-stack">
-                                <span>Agentic Workflows</span>
-                                <span>MCP Server Integration</span>
-                                <span>Prompt Engineering</span>
-                                <span>Process Automation</span>
-                                <span>AI-Assisted Coding</span>
+                    <!-- Coursework Card -->
+                    <div class="bento-card about-coursework-card reveal-left">
+                        <h3 data-i18n="aboutCourseworkTitle"><i class="fas fa-book-reader" style="color: var(--accent-amber); margin-right: 6px;"></i> Relevant Coursework</h3>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed rgba(0,0,0,0.1);">
+                                <span style="font-weight: 500; font-size: 0.95rem; color: var(--text-secondary);">RPA in E-commerce</span>
+                                <span style="background: white; padding: 2px 10px; border-radius: 12px; font-weight: 700; color: var(--accent-amber); font-size: 0.85rem; box-shadow: var(--shadow-sm);">8.3</span>
                             </div>
-                        </div>
-
-                        <div style="margin-bottom: 1.2rem;">
-                            <h4 style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 6px;"><i class="fas fa-laptop-code" style="color: var(--accent-green);"></i> Technical & BA Skills</h4>
-                            <div class="tech-stack">
-                                <span>System Analysis & Design</span>
-                                <span>Requirements Elicitation</span>
-                                <span>Data Modeling</span>
-                                <span>Agile/Scrum</span>
-                                <span>API Integration</span>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed rgba(0,0,0,0.1);">
+                                <span style="font-weight: 500; font-size: 0.95rem; color: var(--text-secondary);">System Analysis & Design</span>
+                                <span style="background: white; padding: 2px 10px; border-radius: 12px; font-weight: 700; color: var(--accent-amber); font-size: 0.85rem; box-shadow: var(--shadow-sm);">8.1</span>
                             </div>
-                        </div>
-
-                        <div>
-                            <h4 style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 6px;"><i class="fas fa-tools" style="color: var(--accent-green);"></i> Tools & Platforms</h4>
-                            <div class="tech-stack">
-                                <span>Figma</span>
-                                <span>Power BI</span>
-                                <span>Postman</span>
-                                <span>Jira</span>
-                                <span>Draw.io / BPMN</span>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed rgba(0,0,0,0.1);">
+                                <span style="font-weight: 500; font-size: 0.95rem; color: var(--text-secondary);">Business Process Integration with ERP</span>
+                                <span style="background: white; padding: 2px 10px; border-radius: 12px; font-weight: 700; color: var(--accent-amber); font-size: 0.85rem; box-shadow: var(--shadow-sm);">8.3</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed rgba(0,0,0,0.1);">
+                                <span style="font-weight: 500; font-size: 0.95rem; color: var(--text-secondary);">Business Information Systems</span>
+                                <span style="background: white; padding: 2px 10px; border-radius: 12px; font-weight: 700; color: var(--accent-amber); font-size: 0.85rem; box-shadow: var(--shadow-sm);">7.8</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-weight: 500; font-size: 0.95rem; color: var(--text-secondary);">Database Systems</span>
+                                <span style="background: white; padding: 2px 10px; border-radius: 12px; font-weight: 700; color: var(--accent-amber); font-size: 0.85rem; box-shadow: var(--shadow-sm);">7.8</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Experience Highlights Card -->
                     <div class="bento-card about-exp-card reveal-right">
-                        <h3>Certifications</h3>
+                        <h3 data-i18n="aboutCertTitle">Certifications</h3>
                         <div class="exp-badge-list">
                             <a href="https://www.coursera.org/account/accomplishments/verify/MXV964QOOBRT?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank" class="exp-badge" style="text-decoration: none; color: inherit;">
                                 <i class="fas fa-certificate"></i>
@@ -201,44 +201,62 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="skills" style="display:none">
+        <section id="skills" class="skills">
             <div class="container">
                 <div class="section-header reveal-up">
-                    <span class="subtitle">Toolbox</span>
-                    <h2>Skills & Tools</h2>
+                    <span class="subtitle" data-i18n="skillsSectionSubtitle">Toolbox</span>
+                    <h2 data-i18n="skillsSectionTitle">Skills & Tools</h2>
                 </div>
-                <div class="skills-grid">
-                    <div class="bento-card skill-category reveal-up">
-                        <h3>📊 Business Analysis</h3>
-                        <div class="skill-tag-list">
-                            <span class="skill-tag">PRD Writing</span>
-                            <span class="skill-tag">BRD / FRD</span>
-                            <span class="skill-tag">BPMN</span>
-                            <span class="skill-tag">UML</span>
-                            <span class="skill-tag">User Stories</span>
-                            <span class="skill-tag">UAT</span>
-                            <span class="skill-tag">Gap Analysis</span>
-                        </div>
+                
+                <div class="skills-tabs reveal-up" style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 30px;">
+                    <button class="skill-tab-btn active" onclick="switchSkillTab('core-skills')" data-tab="core-skills" style="background: #fff; border: 1px solid var(--border); box-shadow: var(--shadow-sm); padding: 10px 24px; border-radius: 30px; font-weight: 600; font-size: 0.95rem; cursor: pointer; display: flex; align-items: center; gap: 8px; color: var(--text-primary); transition: all 0.3s ease;"><i class="fas fa-check-circle" style="color: var(--accent);"></i> <span data-i18n="skillsTabCore">Core Skills</span></button>
+                    <button class="skill-tab-btn" onclick="switchSkillTab('tools-tech')" data-tab="tools-tech" style="background: transparent; border: 1px solid transparent; padding: 10px 24px; border-radius: 30px; font-weight: 500; font-size: 0.95rem; cursor: pointer; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); transition: all 0.3s ease;"><i class="fas fa-magic"></i> <span data-i18n="skillsTabTools">Tools & Technologies</span></button>
+                </div>
+
+                <div class="skills-content reveal-up">
+                    <div id="core-skills" class="skill-tab-content active" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 800px; margin: 0 auto;">
+                        <span class="skill-tag"><i class="fas fa-comments" style="margin-right: 6px;"></i> Requirements Elicitation</span>
+                        <span class="skill-tag"><i class="fas fa-book" style="margin-right: 6px;"></i> Documentation</span>
+                        <span class="skill-tag"><i class="fas fa-server" style="margin-right: 6px;"></i> System Integration</span>
+                        <span class="skill-tag"><i class="fas fa-sync-alt" style="margin-right: 6px;"></i> Agile & Scrum</span>
+                        <span class="skill-tag"><i class="fas fa-chart-pie" style="margin-right: 6px;"></i> Data & Analytics</span>
+                        <span class="skill-tag"><i class="fas fa-users" style="margin-right: 6px;"></i> Stakeholder Communication</span>
+                        <span class="skill-tag"><i class="fas fa-puzzle-piece" style="margin-right: 6px;"></i> Problem Solving</span>
+                        <span class="skill-tag"><i class="fas fa-brain" style="margin-right: 6px;"></i> Critical Thinking</span>
                     </div>
-                    <div class="bento-card skill-category reveal-up" style="transition-delay: 0.1s;">
-                        <h3>🛠️ Tools & Platforms</h3>
-                        <div class="skill-tag-list">
-                            <span class="skill-tag">Figma</span>
-                            <span class="skill-tag">Jira</span>
-                            <span class="skill-tag">Draw.io</span>
-                            <span class="skill-tag">Notion</span>
-                            <span class="skill-tag">Google Workspace</span>
-                            <span class="skill-tag">Power BI</span>
+                    
+                    <div id="tools-tech" class="skill-tab-content" style="display: none; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 800px; margin: 0 auto;">
+                        <div class="tool-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma">
+                            <span>Figma</span>
                         </div>
-                    </div>
-                    <div class="bento-card skill-category reveal-up" style="transition-delay: 0.2s;">
-                        <h3>💻 Technical</h3>
-                        <div class="skill-tag-list">
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">Python (basic)</span>
-                            <span class="skill-tag">Excel / Power BI</span>
-                            <span class="skill-tag">Data Visualization</span>
-                            <span class="skill-tag">API Documentation</span>
+                        <div class="tool-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" alt="Jira">
+                            <span>Jira</span>
+                        </div>
+                        <div class="tool-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="Postman">
+                            <span>Postman</span>
+                        </div>
+                        <div class="tool-card">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI">
+                            <span>Power BI</span>
+                        </div>
+                        <div class="tool-card">
+                            <img src="assets/images/tools/drawio.png" alt="Draw.io">
+                            <span>Draw.io</span>
+                        </div>
+                        <div class="tool-card">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" alt="Notion">
+                            <span>Notion</span>
+                        </div>
+                        <div class="tool-card">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="AI Workflows">
+                            <span>AI Workflows</span>
+                        </div>
+                        <div class="tool-card">
+                            <img src="https://api.iconify.design/logos:google-gemini.svg" alt="Antigravity">
+                            <span>Antigravity</span>
                         </div>
                     </div>
                 </div>
@@ -249,8 +267,8 @@
         <section id="experience" class="experience">
             <div class="container">
                 <div class="section-header reveal-up">
-                    <span class="subtitle">Journey</span>
-                    <h2>Professional Experience</h2>
+                    <span class="subtitle" data-i18n="expJourney">Journey</span>
+                    <h2 data-i18n="expTitle">Professional Experience</h2>
                 </div>
 
                 <div class="timeline reveal-up">
@@ -261,54 +279,30 @@
                                 <span class="company"><a href="https://casso.vn/" target="_blank" style="color: inherit; text-decoration: none;">Casso — Fintech <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-left: 4px;"></i></a></span>
                                 <span class="date">Sep 2025 – Jan 2026</span>
                             </div>
-                            <p>Drove product discovery and delivery at a dynamic Fintech startup. Managed key digital product initiatives from idea validation to MVP launch in a fast-paced Agile environment.</p>
+                            <p data-i18n="expRoleDesc">Drove product discovery and delivery at a dynamic Fintech startup. Managed key digital product initiatives from idea validation to MVP launch in a fast-paced Agile environment.</p>
 
-                            <!-- Phase 1: Electronic Invoices -->
-                            <div class="experience-project">
-                                <h4 class="project-title"><i class="fas fa-file-invoice"></i> Project 1: X Invoice -
-                                    E-Invoice Platform (Idea Validation & MVP Phase) <span style="font-size: 0.85em; font-weight: 500; color: var(--text-secondary);">• 4 Months</span></h4>
-                                <ul class="responsibility-list">
-                                    <li>A strategic initiative to build a
-                                        frictionless, zero-barrier e-invoice platform aimed at automating financial
-                                        operations for micro-SMEs in Vietnam. This project was initially conducted as a
-                                        Proof of Concept (PoC) to validate the business idea and evaluate investment
-                                        potential.</li>
-                                    <li>Conducted in-depth e-invoice market
-                                        research to define strategic development directions, including crafting
-                                        execution roadmaps and designing tiered monetization architectures (pricing
-                                        models).</li>
-                                    <li>Authored comprehensive Product
-                                        Requirements Documents (PRDs) and created high-fidelity UI/UX mockups using
-                                        Figma, strongly focusing on a lean user onboarding flow and core website
-                                        functionalities.</li>
-                                    <li>Successfully proved the product's market
-                                        viability during the validation phase, resulting in the company officially
-                                        funding and greenlighting the project for full-scale production.</li>
-                                </ul>
-                                <div class="tech-stack">
-                                    <span>Jira</span>
-                                    <span>Figma</span>
-                                    <span>Market Research</span>
-                                    <span>Strategic Planning</span>
+                            <!-- Experience Projects Grid -->
+                            <div class="exp-projects-grid" style="margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <!-- Project 1 Card -->
+                                <div class="exp-project-card" onclick="openProjectModal('xinvoice')">
+                                    <div class="card-icon" style="background: rgba(79, 124, 255, 0.1); color: var(--accent);"><i class="fas fa-file-invoice"></i></div>
+                                    <div class="card-content">
+                                        <h4 data-i18n="expProj1CardTitle">Project 1: X Invoice</h4>
+                                        <p data-i18n="expProj1CardDesc">E-Invoice Platform (Idea Validation & MVP Phase)</p>
+                                        <span class="card-duration">4 Months</span>
+                                    </div>
+                                    <i class="fas fa-chevron-right card-arrow"></i>
                                 </div>
-                                <div class="project-docs" style="margin-top: 1rem;">
-                                    <button onclick="openDoc('slide_xinvoice')" class="doc-btn doc-btn-interactive" title="View Project Overview"><i class="fas fa-file-pdf"></i> Project Overview</button>
-                                </div>
-                            </div>
 
-                            <!-- Phase 2: Payment Gateway -->
-                            <div class="experience-project" style="margin-top: 1.5rem;">
-                                <h4 class="project-title"><i class="fas fa-credit-card"></i> Project 2: Payment Gateway & Core Product <span style="font-size: 0.85em; font-weight: 500; color: var(--text-secondary);">• 2 Months</span></h4>
-                                <ul class="responsibility-list">
-                                    <li>Facilitated seamless API integrations with banking and payment partners for a live, stable product, and acted as a technical bridge to troubleshoot and resolve software issues for clients.</li>
-                                    <li>Actively gathered market and customer feedback to ideate practical bug fixes, system enhancements, and overall UX improvements.</li>
-                                    <li>Authored clear technical documentation and spearheaded the launch of new features, successfully onboarding 10 household businesses within the first week of release.</li>
-                                </ul>
-                                <div class="tech-stack">
-                                    <span>API Integration</span>
-                                    <span>Agile</span>
-                                    <span>Customer Support</span>
-                                    <span>Postman</span>
+                                <!-- Project 2 Card -->
+                                <div class="exp-project-card" onclick="openProjectModal('payos')">
+                                    <div class="card-icon" style="background: rgba(255, 159, 67, 0.1); color: #ff9f43;"><i class="fas fa-credit-card"></i></div>
+                                    <div class="card-content">
+                                        <h4 data-i18n="expProj2CardTitle">Project 2: PayOS</h4>
+                                        <p data-i18n="expProj2CardDesc">Payment Gateway & Core Product Integration</p>
+                                        <span class="card-duration">2 Months</span>
+                                    </div>
+                                    <i class="fas fa-chevron-right card-arrow"></i>
                                 </div>
                             </div>
 
@@ -322,30 +316,30 @@
         <section id="projects" class="projects">
             <div class="container">
                 <div class="section-header reveal-up">
-                    <span class="subtitle">Portfolio</span>
-                    <h2>Featured Projects</h2>
+                    <span class="subtitle" data-i18n="projSubtitle">Portfolio</span>
+                    <h2 data-i18n="projTitle">Featured Projects</h2>
                 </div>
 
                 <div class="project-filters reveal-up">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="academy">Academy Project</button>
+                    <button class="filter-btn active" data-filter="all" data-i18n="projFilterAll">All</button>
+                    <button class="filter-btn" data-filter="academy" data-i18n="projFilterAcademy">Academy Project</button>
 
                 </div>
 
                 <div class="projects-grid">
                     <!-- Project 1 -->
-                    <div class="project-card reveal-up" data-category="academy">
+                    <div class="project-card reveal-up" data-category="academy" onclick="openProjectSlide(event, 'slide_bepnhata')" style="cursor: pointer;">
                         <div class="project-image">
                             <img src="assets/images/bepnhata_thumbnail.png" alt="Bếp Nhà Ta BA Project">
                             <div class="project-overlay">
-                                <a href="#" class="view-btn"><i class="fas fa-external-link-alt"></i> View Case
+                                <a href="#" class="view-btn" data-i18n="projBtnViewCase"><i class="fas fa-external-link-alt"></i> View Case
                                     Study</a>
                             </div>
                         </div>
                         <div class="project-info">
-                            <span class="project-category">Mobile App (Academic)</span>
-                            <h3>Bếp Nhà Ta - Digital Platform</h3>
-                            <p>Analyzed and designed a comprehensive food & health mobile app. Mapped out BPMN workflows
+                            <span class="project-category" data-i18n="proj1Cat">Mobile App (Academic)</span>
+                            <h3 data-i18n="proj1Name">Bếp Nhà Ta - Digital Platform</h3>
+                            <p data-i18n="proj1Desc">Analyzed and designed a comprehensive food & health mobile app. Mapped out BPMN workflows
                                 for ordering, calculating BMI/BMR, and meal planning. Developed wireframes, interactive
                                 prototypes, and established a complete Design System.</p>
                             <div class="tech-stack">
@@ -356,32 +350,30 @@
                             </div>
                             <div class="project-docs">
                                 <a href="https://www.figma.com/design/BkLiyreS3837DPS0miZnBY/UI-BEPNHATA-APP?node-id=0-1&p=f&t=kuK2SPkMfDDftILF-0"
-                                    target="_blank" class="doc-btn" title="View Prototype"><i class="fab fa-figma"></i>
+                                    target="_blank" class="doc-btn" title="View Prototype" data-i18n="proj1BtnProto"><i class="fab fa-figma"></i>
                                     Prototype</a>
                                 <a href="https://app.notion.com/p/BRD_BEPNHATA-APP-36e6f8ff38a98018bc19fdc1df55d96f"
-                                    target="_blank" class="doc-btn" title="View BRD/BSR"><i class="fas fa-file-alt"></i>
+                                    target="_blank" class="doc-btn" title="View BRD/BSR" data-i18n="proj1BtnBrd"><i class="fas fa-file-alt"></i>
                                     BRD/BSR</a>
-                                <button onclick="openDoc('slide_bepnhata')" class="doc-btn doc-btn-interactive"
-                                    title="View Presentation"><i class="fas fa-file-powerpoint"></i> Slide</button>
                                 <button onclick="openDoc('report_bepnhata')" class="doc-btn doc-btn-interactive"
-                                    title="View Report"><i class="fas fa-book"></i> Report</button>
+                                    title="View Report" data-i18n="proj1BtnReport"><i class="fas fa-book"></i> Report</button>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 2 (Web Academy) -->
-                    <div class="project-card reveal-up" data-category="academy" style="transition-delay: 0.1s;">
+                    <div class="project-card reveal-up" data-category="academy" style="transition-delay: 0.1s; cursor: pointer;" onclick="openProjectSlide(event, 'slide_bepnhata_web')">
                         <div class="project-image">
                             <img src="assets/images/bepnhata_web_thumbnail.png" alt="Bếp Nhà Ta Web Project">
                             <div class="project-overlay">
-                                <a href="#" class="view-btn"><i class="fas fa-external-link-alt"></i> View Case
+                                <a href="#" class="view-btn" data-i18n="projBtnViewCase"><i class="fas fa-external-link-alt"></i> View Case
                                     Study</a>
                             </div>
                         </div>
                         <div class="project-info">
-                            <span class="project-category">Web Platform (Academic)</span>
-                            <h3>Bếp Nhà Ta - E-Commerce Website</h3>
-                            <p>Analyzed and documented an e-commerce platform for food products. Created Data Flow
+                            <span class="project-category" data-i18n="proj2Cat">Web Platform (Academic)</span>
+                            <h3 data-i18n="proj2Name">Bếp Nhà Ta - E-Commerce Website</h3>
+                            <p data-i18n="proj2Desc">Analyzed and documented an e-commerce platform for food products. Created Data Flow
                                 Diagrams (DFD), Database Schemas (MongoDB/NoSQL), and designed the user and admin
                                 interfaces using Figma and Bootstrap.</p>
                             <div class="tech-stack">
@@ -392,15 +384,13 @@
                             </div>
                             <div class="project-docs">
                                 <a href="https://www.figma.com/design/cCvfPLBsttjNR7ZP3tDwg9/B%E1%BA%BFp-Nh%C3%A0-Ta?t=sqorWZ2kaVBcMNU7-0"
-                                    target="_blank" class="doc-btn" title="View Prototype"><i class="fab fa-figma"></i>
+                                    target="_blank" class="doc-btn" title="View Prototype" data-i18n="proj1BtnProto"><i class="fab fa-figma"></i>
                                     Prototype</a>
                                 <a href="https://app.notion.com/p/BRD_BEPNHATAWEBSITE-36f6f8ff38a98032a619d27347d1ddde"
-                                    target="_blank" class="doc-btn" title="View BRD/BSR"><i class="fas fa-file-alt"></i>
+                                    target="_blank" class="doc-btn" title="View BRD/BSR" data-i18n="proj1BtnBrd"><i class="fas fa-file-alt"></i>
                                     BRD/BSR</a>
-                                <button onclick="openDoc('slide_bepnhata_web')" class="doc-btn doc-btn-interactive"
-                                    title="View Presentation"><i class="fas fa-file-powerpoint"></i> Slide</button>
                                 <button onclick="openDoc('report_bepnhata_web')" class="doc-btn doc-btn-interactive"
-                                    title="View Report"><i class="fas fa-book"></i> Report</button>
+                                    title="View Report" data-i18n="proj1BtnReport"><i class="fas fa-book"></i> Report</button>
                             </div>
                         </div>
                     </div>
@@ -415,12 +405,12 @@
             <div class="container">
                 <div class="contact-bento reveal-up">
                     <div class="contact-card">
-                        <h2>Let's build something amazing together</h2>
-                        <p>I'm open to new opportunities, creative ideas, and meaningful collaborations.</p>
+                        <h2 data-i18n="contactTitle">Let's build something amazing together</h2>
+                        <p data-i18n="contactDesc">I'm open to new opportunities, creative ideas, and meaningful collaborations.</p>
                         <div class="contact-links">
-                            <a href="mailto:hotiendat117@gmail.com" class="contact-item">
+                            <a href="mailto:datht411work@gmail.com" class="contact-item">
                                 <i class="fas fa-envelope"></i>
-                                hotiendat117@gmail.com
+                                datht411work@gmail.com
                             </a>
                             <a href="https://github.com/htdat117" target="_blank" class="contact-item">
                                 <i class="fab fa-github"></i>
@@ -431,24 +421,39 @@
                 </div>
             </div>
         </section>
+        <!-- Project Detail Modal (Notion Style) -->
+        <div id="project-detail-modal" class="notion-modal">
+            <div class="notion-modal-overlay" onclick="closeProjectModal()"></div>
+            <div class="notion-modal-container">
+                <button class="notion-close-btn" onclick="closeProjectModal()"><i class="fas fa-times"></i></button>
+                <div class="notion-modal-content" id="notion-modal-body">
+                    <!-- Dynamic Content Injected Here -->
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">Portfolio <span>HO TIEN DAT</span></div>
+                <div class="footer-logo" style="display: flex; align-items: center; gap: 8px;">
+                    <img src="assets/images/logo_d.png" alt="Dat Logo" style="height: 28px; width: 28px; border-radius: 4px; filter: grayscale(100%) brightness(200%);">
+                    Portfolio <span>HO TIEN DAT</span>
+                </div>
                 <div class="social-links">
                     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://github.com/htdat117" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2026 HO TIEN DAT. All rights reserved.</p>
+                <p data-i18n="footerCopy">&copy; 2026 HO TIEN DAT. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Custom JS -->
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 
     <!-- Resume PDF Modal -->
@@ -457,7 +462,7 @@
             <div class="resume-modal-header">
                 <span>CV — Hồ Tiến Đạt</span>
                 <div class="resume-modal-actions">
-                    <a href="assets/docs/CV_BusinessAnalyst_HoTienDat.pdf" download class="resume-download-btn">
+                    <a href="assets/docs/CV_BusinessAnalyst_HoTienDat.pdf" download class="resume-download-btn" data-i18n="modalDownload">
                         <i class="fas fa-download"></i> Download
                     </a>
                     <button class="resume-close-btn" onclick="closeResume()">
@@ -476,7 +481,7 @@
             <div class="resume-modal-header">
                 <span id="docModalTitle">Document</span>
                 <div class="resume-modal-actions">
-                    <a id="docDownloadBtn" href="#" download class="resume-download-btn">
+                    <a id="docDownloadBtn" href="#" download class="resume-download-btn" data-i18n="modalDownload">
                         <i class="fas fa-download"></i> Download
                     </a>
                     <button class="resume-close-btn" onclick="closeDoc()">
@@ -529,6 +534,164 @@
         function closeDocOnBg(e) {
             if (e.target === document.getElementById('docModal')) closeDoc();
         }
+
+        function openProjectSlide(event, type) {
+            // Ignore if clicked on an anchor or a button inside the card
+            if (event.target.closest('a') || event.target.closest('button')) {
+                return;
+            }
+            openDoc(type);
+        }
+        function switchSkillTab(tabId) {
+            // Update buttons
+            document.querySelectorAll('.skill-tab-btn').forEach(btn => {
+                if (btn.getAttribute('data-tab') === tabId) {
+                    btn.classList.add('active');
+                    btn.style.background = '#fff';
+                    btn.style.boxShadow = 'var(--shadow-sm)';
+                    btn.style.borderColor = 'var(--border)';
+                    btn.style.color = 'var(--text-primary)';
+                    btn.querySelector('i').style.color = 'var(--text-primary)';
+                } else {
+                    btn.classList.remove('active');
+                    btn.style.background = 'transparent';
+                    btn.style.boxShadow = 'none';
+                    btn.style.borderColor = 'transparent';
+                    btn.style.color = 'var(--text-secondary)';
+                    btn.querySelector('i').style.color = '';
+                }
+            });
+
+            // Update content
+            document.querySelectorAll('.skill-tab-content').forEach(content => {
+                if (content.id === tabId) {
+                    content.style.display = 'flex';
+                } else {
+                    content.style.display = 'none';
+                }
+            });
+        }
+
+        // Notion Modal Logic
+        const projectData = {
+            'xinvoice': {
+                title: 'Project 1: X Invoice - E-Invoice Platform',
+                period: '4 Months (Sep 2025 - Jan 2026)',
+                client: 'Internal Startup Initiative (Casso)',
+                domain: 'Fintech / E-Invoice',
+                teamSize: '4',
+                position: 'Associate Product Manager',
+                platform: 'Web App',
+                methodology: 'Agile (Scrum)',
+                description: 'A strategic initiative to build a frictionless, zero-barrier e-invoice platform aimed at automating financial operations for micro-SMEs in Vietnam. This project was initially conducted as a Proof of Concept (PoC) to validate the business idea and evaluate investment potential.',
+                responsibilities: [
+                    'Conducted in-depth e-invoice market research to define strategic development directions, including crafting execution roadmaps and designing tiered monetization architectures (pricing models).',
+                    'Authored comprehensive Product Requirements Documents (PRDs) and created high-fidelity UI/UX mockups using Figma, strongly focusing on a lean user onboarding flow and core website functionalities.',
+                    'Acted as a bridge between stakeholders and the development team to ensure clear requirements delivery.'
+                ],
+                achievements: 'Successfully proved the product\'s market viability during the validation phase, resulting in the company officially funding and greenlighting the project for full-scale production.',
+                docsBtn: `<button onclick="openDoc('slide_xinvoice')" class="doc-btn doc-btn-interactive" style="margin-top:15px; font-size: 0.9rem;"><i class="fas fa-file-pdf"></i> View Project Overview</button>`
+            },
+            'payos': {
+                title: 'Project 2: PayOS - Payment Gateway Integration',
+                period: '2 Months',
+                client: 'B2B Merchants',
+                domain: 'Fintech / Payment',
+                teamSize: '4',
+                position: 'Associate Product Manager',
+                platform: 'API / Core Banking',
+                methodology: 'Agile (Scrum)',
+                description: 'Integration of a payment gateway and core product features. The project focused on providing seamless API integrations for merchants and resolving live system issues efficiently.',
+                responsibilities: [
+                    'Coordinated with a banking partner and a payment solution provider to facilitate API integrations, acting as a technical bridge between Dev teams and clients to troubleshoot and resolve live system issues.',
+                    'Gathered and analyzed customer feedback from 20+ merchant clients, translating insights into actionable User Stories on Jira for bug fixes and UX enhancements, reducing recurring support tickets.',
+                    'Authored technical documentation & release notes for new feature launches, and directly supported merchant onboarding.'
+                ],
+                achievements: 'Successfully activated 10 household businesses within the first week of go-live, ensuring a 100% success rate in initial transactions.',
+                docsBtn: ''
+            }
+        };
+
+        function openProjectModal(projectId) {
+            const data = projectData[projectId];
+            if (!data) return;
+
+            const modalBody = document.getElementById('notion-modal-body');
+            
+            let responsibilitiesHtml = '<ul style="margin: 0; padding-left: 20px;">';
+            data.responsibilities.forEach(item => {
+                responsibilitiesHtml += `<li>${item}</li>`;
+            });
+            responsibilitiesHtml += '</ul>';
+
+            modalBody.innerHTML = `
+                <div class="notion-header">
+                    <div class="notion-icon">📄</div>
+                    <h2>${data.title}</h2>
+                    <div class="notion-meta">
+                        <span class="notion-meta-item"><i class="far fa-clock"></i> <span>Domain</span> <span class="notion-tag">${data.domain}</span></span>
+                    </div>
+                </div>
+                <div class="notion-table-container">
+                    <table class="notion-table">
+                        <tbody>
+                            <tr>
+                                <td class="notion-td-label">Project description</td>
+                                <td>${data.description}</td>
+                            </tr>
+                            <tr>
+                                <td class="notion-td-label">Period</td>
+                                <td>${data.period}</td>
+                            </tr>
+                            <tr>
+                                <td class="notion-td-label">Client</td>
+                                <td>${data.client}</td>
+                            </tr>
+                            <tr>
+                                <td class="notion-td-label">Domain</td>
+                                <td>${data.domain}</td>
+                            </tr>
+                            <tr>
+                                <td class="notion-td-label">Team size</td>
+                                <td>${data.teamSize}</td>
+                            </tr>
+                            <tr>
+                                <td class="notion-td-label">Position</td>
+                                <td>${data.position}</td>
+                            </tr>
+                            <tr>
+                                <td class="notion-td-label">Platform, server and database</td>
+                                <td>${data.platform}</td>
+                            </tr>
+                            <tr>
+                                <td class="notion-td-label">Methodology</td>
+                                <td>${data.methodology}</td>
+                            </tr>
+                            <tr>
+                                <td class="notion-td-label">Responsibilities</td>
+                                <td>${responsibilitiesHtml}</td>
+                            </tr>
+                            <tr>
+                                <td class="notion-td-label">Achievements</td>
+                                <td>${data.achievements}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                ${data.docsBtn}
+            `;
+
+            const modal = document.getElementById('project-detail-modal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('project-detail-modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
     </script>
 </body>
 
