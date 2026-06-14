@@ -303,7 +303,13 @@ h3 { font-size: 1.35rem; font-weight: 650; }
     top: 0; left: 0; width: 100%; height: 100%;
     z-index: 0;
     pointer-events: none;
-    display: none;
+    display: block;
+}
+
+#hero-3d-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 .new-hero .container {
@@ -329,6 +335,8 @@ h3 { font-size: 1.35rem; font-weight: 650; }
     position: relative;
     width: 380px;
     height: 380px;
+    transform-style: preserve-3d;
+    perspective: 800px;
 }
 
 /* Gradient Bubbles behind the avatar */
@@ -373,22 +381,22 @@ h3 { font-size: 1.35rem; font-weight: 650; }
 @keyframes pulse-avatar {
     0% {
         border-color: #fca311;
-        box-shadow: 0 0 0 0 rgba(252, 163, 17, 0.7);
+        box-shadow: 0 0 0 0 rgba(252, 163, 17, 0.7), 0 0 30px rgba(107, 82, 255, 0.3);
         transform: scale(1);
     }
     33% {
         border-color: #ff5e62;
-        box-shadow: 0 0 0 20px rgba(255, 94, 98, 0);
+        box-shadow: 0 0 0 20px rgba(255, 94, 98, 0), 0 0 40px rgba(255, 94, 98, 0.2);
         transform: scale(1.03);
     }
     66% {
         border-color: #6b52ff;
-        box-shadow: 0 0 0 0 rgba(107, 82, 255, 0.7);
+        box-shadow: 0 0 0 0 rgba(107, 82, 255, 0.7), 0 0 30px rgba(79, 124, 255, 0.4);
         transform: scale(0.98);
     }
     100% {
         border-color: #fca311;
-        box-shadow: 0 0 0 20px rgba(252, 163, 17, 0);
+        box-shadow: 0 0 0 20px rgba(252, 163, 17, 0), 0 0 30px rgba(252, 163, 17, 0.3);
         transform: scale(1);
     }
 }
@@ -455,8 +463,88 @@ h3 { font-size: 1.35rem; font-weight: 650; }
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+/* ─── Saturn Orbit Rings ─────────────────────────────────────── */
+.orbit-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: 1.5px solid;
+    transform-style: preserve-3d;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.orbit-ring-1 {
+    width: 440px;
+    height: 440px;
+    margin-top: -220px;
+    margin-left: -220px;
+    border-color: rgba(107, 82, 255, 0.35);
+    animation: orbit-spin-1 8s linear infinite;
+    box-shadow: 0 0 12px rgba(107, 82, 255, 0.2), inset 0 0 12px rgba(107, 82, 255, 0.05);
+}
+
+.orbit-ring-2 {
+    width: 500px;
+    height: 500px;
+    margin-top: -250px;
+    margin-left: -250px;
+    border-color: rgba(252, 163, 17, 0.25);
+    animation: orbit-spin-2 14s linear infinite reverse;
+    box-shadow: 0 0 10px rgba(252, 163, 17, 0.15);
+}
+
+@keyframes orbit-spin-1 {
+    0%   { transform: rotateX(70deg) rotateZ(0deg); }
+    100% { transform: rotateX(70deg) rotateZ(360deg); }
+}
+
+@keyframes orbit-spin-2 {
+    0%   { transform: rotateX(55deg) rotateZ(0deg); }
+    100% { transform: rotateX(55deg) rotateZ(360deg); }
+}
+
+/* Orbiting Dots */
+.orbit-dot {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    margin-top: -4.5px;
+    margin-left: -4.5px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.orbit-dot-1 {
+    background: radial-gradient(circle, #8b6fff, #6b52ff);
+    box-shadow: 0 0 8px #6b52ff, 0 0 16px rgba(107, 82, 255, 0.5);
+    animation: orbit-dot-spin-1 8s linear infinite;
+    transform-origin: 0 0;
+}
+
+.orbit-dot-2 {
+    background: radial-gradient(circle, #ffd166, #fca311);
+    box-shadow: 0 0 8px #fca311, 0 0 16px rgba(252, 163, 17, 0.5);
+    animation: orbit-dot-spin-2 14s linear infinite reverse;
+    transform-origin: 0 0;
+}
+
+@keyframes orbit-dot-spin-1 {
+    0%   { transform: rotateX(70deg) rotateZ(0deg) translateX(220px) rotateX(-70deg); }
+    100% { transform: rotateX(70deg) rotateZ(360deg) translateX(220px) rotateX(-70deg); }
+}
+
+@keyframes orbit-dot-spin-2 {
+    0%   { transform: rotateX(55deg) rotateZ(0deg) translateX(250px) rotateX(-55deg); }
+    100% { transform: rotateX(55deg) rotateZ(360deg) translateX(250px) rotateX(-55deg); }
 }
 
 /* Hero Right: Content */
@@ -1267,22 +1355,63 @@ footer {
 }
 
 /* =========================================
-   ANIMATIONS (Scroll Reveal)
+   ANIMATIONS (Scroll Reveal — 3D Depth)
    ========================================= */
-.reveal-up, .reveal-left, .reveal-right {
+.reveal-up, .reveal-left, .reveal-right, .reveal-3d {
     opacity: 0;
-    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
 }
 
-.reveal-up { transform: translateY(32px); }
-.reveal-left { transform: translateX(-32px); }
-.reveal-right { transform: translateX(32px); }
+/* 3D depth-from-behind reveal */
+.reveal-up {
+    transform: perspective(1000px) translateY(40px) translateZ(-40px) rotateX(8deg);
+}
+
+.reveal-left {
+    transform: perspective(1000px) translateX(-40px) translateZ(-30px) rotateY(6deg);
+}
+
+.reveal-right {
+    transform: perspective(1000px) translateX(40px) translateZ(-30px) rotateY(-6deg);
+}
+
+.reveal-3d {
+    transform: perspective(1000px) translateZ(-60px) rotateX(12deg);
+}
 
 .reveal-up.active,
 .reveal-left.active,
-.reveal-right.active {
+.reveal-right.active,
+.reveal-3d.active {
     opacity: 1;
-    transform: translate(0);
+    transform: perspective(1000px) translateY(0) translateX(0) translateZ(0) rotateX(0) rotateY(0);
+}
+
+/* ─── Card Tilt (applied via JS) ──────────────────── */
+.tilt-card {
+    transform-style: preserve-3d;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    will-change: transform;
+}
+
+.tilt-card .tilt-shine {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        circle at var(--shine-x, 50%) var(--shine-y, 50%),
+        rgba(255,255,255,0.18) 0%,
+        rgba(255,255,255,0) 65%
+    );
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tilt-card:hover .tilt-shine {
+    opacity: 1;
 }
 
 /* =========================================
@@ -1368,7 +1497,26 @@ footer {
     .contact-card h2 { font-size: 1.6rem; }
 
     .footer-content { flex-direction: column; gap: 1rem; text-align: center; }
+
+    /* Hide 3D orbit rings and Three.js canvas on mobile */
+    .orbit-ring,
+    .orbit-dot,
+    #hero-3d-canvas { display: none; }
+
+    /* Simplify 3D reveals to flat 2D on mobile for performance */
+    .reveal-up  { transform: translateY(24px); }
+    .reveal-left  { transform: translateX(-24px); }
+    .reveal-right { transform: translateX(24px); }
+    .reveal-3d  { transform: translateY(24px); }
+
+    .reveal-up.active,
+    .reveal-left.active,
+    .reveal-right.active,
+    .reveal-3d.active {
+        transform: translate(0);
+    }
 }
+
 
 @media (max-width: 480px) {
     .avatar-wrapper { width: 250px; height: 250px; }
@@ -1787,3 +1935,614 @@ footer {
         font-size: 1.5rem;
     }
 }
+
+/* ============================================================
+   3D DARK VIBE UPGRADE — All Sections
+   ============================================================ */
+
+/* ── Blob float animation (shared) ──────────────────────────── */
+@keyframes blob-drift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33%       { transform: translate(20px, -30px) scale(1.06); }
+    66%       { transform: translate(-15px, 15px) scale(0.96); }
+}
+
+@keyframes shimmer-slide {
+    from { left: -100%; }
+    to   { left: 200%; }
+}
+
+/* ── Section header — gradient text (light sections) ────────── */
+.section-header h2 {
+    background: linear-gradient(135deg, var(--text-primary) 20%, #5a5a7a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ── About section — subtle glow blobs behind bento ─────────── */
+#about {
+    background: var(--bg-muted);
+    position: relative;
+    overflow: hidden;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -5%;
+    width: 460px;
+    height: 460px;
+    background: radial-gradient(circle, rgba(107,82,255,0.07) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: blob-drift 10s ease-in-out infinite;
+}
+
+#about::after {
+    content: '';
+    position: absolute;
+    bottom: -5%;
+    right: -5%;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(252,163,17,0.07) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: blob-drift 13s ease-in-out infinite reverse;
+}
+
+/* Bento cards: subtle inner glow highlight on hover */
+.about .bento-card {
+    position: relative;
+}
+
+.about .bento-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg,
+        rgba(107,82,255,0.05) 0%,
+        transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.about .bento-card:hover::before { opacity: 1; }
+
+/* ── Skills — DEEP DARK ──────────────────────────────────────── */
+#skills {
+    background: linear-gradient(145deg, #0a0a12 0%, #0e0b1c 55%, #080810 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+#skills::before {
+    content: '';
+    position: absolute;
+    top: -15%;
+    left: 15%;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, rgba(107,82,255,0.18) 0%, transparent 65%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: blob-drift 9s ease-in-out infinite;
+}
+
+#skills::after {
+    content: '';
+    position: absolute;
+    bottom: -15%;
+    right: 5%;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(79,124,255,0.13) 0%, transparent 65%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: blob-drift 12s ease-in-out infinite reverse;
+}
+
+/* Floating decorative wireframe rings in skills */
+#skills .container { position: relative; z-index: 1; }
+
+#skills .section-header h2 {
+    background: linear-gradient(135deg, #fff 10%, #c4b5fd 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#skills .subtitle {
+    background: rgba(107,82,255,0.2);
+    color: #a78bff;
+    border: 1px solid rgba(107,82,255,0.3);
+}
+
+/* Skill tags — glassmorphism on dark */
+#skills .skill-tag {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: none;
+}
+
+#skills .skill-tag:hover {
+    background: rgba(107,82,255,0.28);
+    border-color: rgba(107,82,255,0.55);
+    color: #c4b5fd;
+    box-shadow: 0 0 18px rgba(107,82,255,0.35), 0 0 35px rgba(107,82,255,0.12);
+    transform: translateY(-3px);
+}
+
+/* Tool cards on dark */
+#skills .tool-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.09);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+#skills .tool-card span { color: rgba(255,255,255,0.82); }
+
+#skills .tool-card:hover {
+    background: rgba(107,82,255,0.18);
+    border-color: rgba(107,82,255,0.45);
+    box-shadow: 0 0 24px rgba(107,82,255,0.25), 0 8px 20px rgba(0,0,0,0.3);
+    transform: translateY(-5px);
+}
+
+/* Skill tab buttons on dark bg */
+.skills-tabs .skill-tab-btn {
+    background: rgba(255,255,255,0.07) !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    color: rgba(255,255,255,0.6) !important;
+    box-shadow: none !important;
+}
+
+.skills-tabs .skill-tab-btn.active {
+    background: linear-gradient(135deg, rgba(107,82,255,0.35), rgba(79,124,255,0.3)) !important;
+    border-color: rgba(107,82,255,0.5) !important;
+    color: #c4b5fd !important;
+    box-shadow: 0 0 20px rgba(107,82,255,0.25), 0 4px 12px rgba(0,0,0,0.3) !important;
+}
+
+.skills-tabs .skill-tab-btn.active i { color: #c4b5fd !important; }
+
+.skills-tabs .skill-tab-btn:not(.active):hover {
+    background: rgba(255,255,255,0.12) !important;
+    color: rgba(255,255,255,0.85) !important;
+}
+
+/* ── Experience — DEEPEST DARK ───────────────────────────────── */
+#experience {
+    background: linear-gradient(145deg, #07070e 0%, #0b091a 55%, #060612 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+#experience::before {
+    content: '';
+    position: absolute;
+    top: 5%;
+    right: -8%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(252,163,17,0.1) 0%, transparent 65%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: blob-drift 14s ease-in-out infinite;
+}
+
+#experience::after {
+    content: '';
+    position: absolute;
+    bottom: -5%;
+    left: 2%;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(107,82,255,0.12) 0%, transparent 65%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: blob-drift 10s ease-in-out infinite reverse;
+}
+
+#experience .container { position: relative; z-index: 1; }
+
+#experience .section-header h2 {
+    background: linear-gradient(135deg, #fff 10%, #fcd34d 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#experience .subtitle {
+    background: rgba(252,163,17,0.18);
+    color: #fcd34d;
+    border: 1px solid rgba(252,163,17,0.35);
+}
+
+/* Glowing timeline */
+#experience .timeline-content {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.07);
+    border-left: 3px solid #6b52ff;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: -3px 0 24px rgba(107,82,255,0.25), 0 6px 24px rgba(0,0,0,0.35);
+}
+
+#experience .timeline-content:hover {
+    background: rgba(255,255,255,0.07);
+    box-shadow: -5px 0 35px rgba(107,82,255,0.45), 0 10px 35px rgba(0,0,0,0.45);
+    transform: translateX(6px);
+}
+
+#experience .timeline-header h3 { color: #fff; }
+
+#experience .company { color: #a78bff; }
+
+#experience .date {
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.45);
+}
+
+#experience .timeline-content > p { color: rgba(255,255,255,0.62); }
+
+/* Exp project cards */
+#experience .exp-project-card {
+    background: rgba(255,255,255,0.045);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+#experience .exp-project-card:hover {
+    background: rgba(107,82,255,0.1);
+    border-color: rgba(107,82,255,0.5);
+    box-shadow: 0 0 28px rgba(107,82,255,0.2), 0 8px 24px rgba(0,0,0,0.4);
+}
+
+#experience .exp-project-card h4 { color: #fff; }
+
+#experience .card-tag {
+    background: rgba(252,163,17,0.18);
+    color: #fcd34d;
+}
+
+#experience .card-title-icon { color: rgba(255,255,255,0.45); }
+
+/* ── Projects — subtle depth ──────────────────────────────────── */
+#projects {
+    background: linear-gradient(170deg, var(--bg) 0%, #ece9e4 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+#projects::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: -5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(107,82,255,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: blob-drift 11s ease-in-out infinite;
+}
+
+#projects::after {
+    content: '';
+    position: absolute;
+    bottom: 5%;
+    left: -5%;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(252,163,17,0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: blob-drift 15s ease-in-out infinite reverse;
+}
+
+#projects .container { position: relative; z-index: 1; }
+
+/* ── Contact — dramatic dark + glow ──────────────────────────── */
+.contact-card {
+    background: linear-gradient(145deg, #0f0f1c 0%, #14102a 55%, #0a0816 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: -15%;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(107,82,255,0.22) 0%, transparent 68%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: blob-drift 8s ease-in-out infinite;
+    z-index: 0;
+}
+
+.contact-card::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    right: -10%;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(252,163,17,0.14) 0%, transparent 68%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: blob-drift 12s ease-in-out infinite reverse;
+    z-index: 0;
+}
+
+.contact-card h2,
+.contact-card > p,
+.contact-card .contact-links { position: relative; z-index: 1; }
+
+.contact-item:hover {
+    background: rgba(107,82,255,0.22);
+    border-color: rgba(107,82,255,0.5);
+    box-shadow: 0 0 24px rgba(107,82,255,0.25);
+    transform: translateY(-3px);
+}
+
+.contact-item i { color: #a78bff; }
+
+/* ============================================================
+   BUTTON UPGRADE — Gradient + Shimmer + Glow
+   ============================================================ */
+
+/* Primary CTA */
+.btn-primary {
+    background: linear-gradient(135deg, #6b52ff 0%, #4f7cff 60%, #3a66e8 100%);
+    color: #fff !important;
+    border: none;
+    box-shadow: 0 4px 18px rgba(107,82,255,0.45), 0 1px 4px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shimmer sweep */
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
+    transform: skewX(-15deg);
+    animation: shimmer-slide 3s ease-in-out infinite;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #7c66ff 0%, #6090ff 60%, #4f7cff 100%);
+    box-shadow: 0 6px 28px rgba(107,82,255,0.65), 0 0 50px rgba(107,82,255,0.18);
+    transform: translateY(-3px);
+}
+
+/* Secondary glassmorphism */
+.btn-secondary {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(107,82,255,0.2);
+    color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-secondary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(107,82,255,0.06), rgba(79,124,255,0.06));
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.btn-secondary:hover::after { opacity: 1; }
+
+.btn-secondary:hover {
+    border-color: rgba(107,82,255,0.45);
+    box-shadow: 0 0 24px rgba(107,82,255,0.18), 0 4px 12px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.88);
+}
+
+/* ── Filter buttons — gradient active ───────────────────────── */
+.filter-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(107,82,255,0.08), rgba(79,124,255,0.08));
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.filter-btn:hover::before { opacity: 1; }
+.filter-btn:hover { border-color: rgba(107,82,255,0.3); color: var(--accent); }
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #6b52ff, #4f7cff);
+    color: #fff !important;
+    border-color: transparent;
+    box-shadow: 0 4px 16px rgba(107,82,255,0.38), 0 1px 4px rgba(0,0,0,0.15);
+}
+
+.filter-btn.active:hover { transform: translateY(-2px); }
+
+/* ── Doc buttons — glass pill ────────────────────────────────── */
+.doc-btn {
+    background: rgba(79,124,255,0.07);
+    border: 1px solid rgba(79,124,255,0.18);
+    color: var(--accent);
+    font-weight: 600;
+    transition: all 0.22s cubic-bezier(0.4,0,0.2,1);
+}
+
+.doc-btn i { color: var(--accent); }
+
+.doc-btn:hover {
+    background: linear-gradient(135deg, #6b52ff, #4f7cff);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 4px 16px rgba(107,82,255,0.35);
+    transform: translateY(-3px);
+}
+
+.doc-btn:hover i { color: #fff; }
+
+/* ── GPA doc buttons ─────────────────────────────────────────── */
+.gpa-doc-btn:hover {
+    background: rgba(255,255,255,0.32);
+    box-shadow: 0 4px 16px rgba(255,255,255,0.15);
+    transform: translateX(5px);
+}
+
+/* ── Availability pill — pulsing glow ───────────────────────── */
+.availability-pill {
+    background: rgba(26,144,96,0.1);
+    border-color: rgba(26,144,96,0.25);
+    color: #1a9060;
+}
+
+/* ── Exp badge links — lift on hover ───────────────────────── */
+.exp-badge {
+    transition: all 0.22s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.exp-badge::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(52,196,138,0.08), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.exp-badge:hover { transform: translateX(5px); box-shadow: 0 4px 12px rgba(52,196,138,0.15); }
+.exp-badge:hover::before { opacity: 1; }
+
+/* ── Navbar — glow underline on active link ─────────────────── */
+.nav-links a.active-link {
+    color: var(--accent);
+    text-shadow: 0 0 12px rgba(107,82,255,0.4);
+}
+
+/* ── Section decoration — 3D floating grid lines ────────────── */
+.section-grid-deco {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    opacity: 0.035;
+    background-image:
+        linear-gradient(rgba(107,82,255,1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(107,82,255,1) 1px, transparent 1px);
+    background-size: 60px 60px;
+    transform: perspective(600px) rotateX(30deg) scale(1.4);
+    transform-origin: top center;
+}
+
+/* ── Project cards enhanced on light bg ─────────────────────── */
+.project-card {
+    transition: transform 0.2s cubic-bezier(0.4,0,0.2,1), box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 12px 36px rgba(107,82,255,0.15), 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ── Timeline pulsing vertical line ─────────────────────────── */
+#experience .timeline::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #6b52ff, #fca311, #6b52ff);
+    background-size: 100% 200%;
+    animation: gradient-line 4s linear infinite;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(107,82,255,0.5);
+    opacity: 0;  /* hidden since we use border-left on content */
+}
+
+/* ── Footer dark mode tweak ──────────────────────────────────── */
+footer {
+    background: #0a0a10;
+    border-top-color: rgba(255,255,255,0.07);
+}
+
+.footer-logo { color: rgba(255,255,255,0.85); }
+.footer-logo span { color: #a78bff; }
+
+.copyright p { color: rgba(255,255,255,0.3); }
+
+.social-links a {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.6);
+}
+
+.social-links a:hover {
+    background: linear-gradient(135deg, #6b52ff, #4f7cff);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 0 18px rgba(107,82,255,0.4);
+}
+
+/* ── 3D section perspective grid — skills & experience ───────── */
+#skills .section-grid-deco,
+#experience .section-grid-deco {
+    opacity: 0.025;
+    background-image:
+        linear-gradient(rgba(107,82,255,1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(107,82,255,1) 1px, transparent 1px);
+}
+
+/* ── Mobile responsive cleanup ───────────────────────────────── */
+@media (max-width: 768px) {
+    #skills::before, #skills::after,
+    #experience::before, #experience::after,
+    #about::before, #about::after,
+    .contact-card::before, .contact-card::after { display: none; }
+
+    .btn-primary::after { display: none; }
+
+    #skills .section-header h2,
+    #experience .section-header h2 {
+        font-size: 1.8rem;
+    }
+}
+

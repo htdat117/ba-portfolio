@@ -21,8 +21,12 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-theme.css">
 </head>
 
 <body>
@@ -55,13 +59,20 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero new-hero">
-            <div class="hero-bg-shapes"></div>
+            <div class="hero-bg-shapes">
+                <canvas id="hero-3d-canvas"></canvas>
+            </div>
             <div class="container">
                 <div class="hero-split">
 
                     <!-- Avatar Column -->
                     <div class="hero-left reveal-left">
                         <div class="avatar-wrapper">
+                            <!-- Saturn Ring Orbits -->
+                            <div class="orbit-ring orbit-ring-1"></div>
+                            <div class="orbit-ring orbit-ring-2"></div>
+                            <div class="orbit-dot orbit-dot-1"></div>
+                            <div class="orbit-dot orbit-dot-2"></div>
                             <div class="avatar-circle">
                                 <img src="assets/images/avatar.png" alt="Hồ Tiến Đạt - Business Analyst">
                             </div>
@@ -76,7 +87,7 @@
                             <div class="floating-badge badge-bottom-left">
                                 <div class="badge-icon">✨</div>
                                 <div class="badge-text">
-                                    <strong>Fintech & E-Commerce</strong>
+                                    <strong>Fintech &amp; E-Commerce</strong>
                                 </div>
                             </div>
                         </div>
@@ -109,6 +120,8 @@
 
         <!-- About Section -->
         <section id="about" class="about">
+            <!-- CSS Star Field -->
+            <div class="section-stars" aria-hidden="true"></div>
             <div class="container">
                 <div class="section-header reveal-up">
                     <span class="subtitle" data-i18n="aboutDiscover">Discover</span>
@@ -202,6 +215,8 @@
 
         <!-- Skills Section -->
         <section id="skills" class="skills">
+            <!-- 3D Perspective Grid Deco -->
+            <div class="section-grid-deco" aria-hidden="true"></div>
             <div class="container">
                 <div class="section-header reveal-up">
                     <span class="subtitle" data-i18n="skillsSectionSubtitle">Toolbox</span>
@@ -265,6 +280,8 @@
 
         <!-- Experience Section -->
         <section id="experience" class="experience">
+            <!-- 3D Perspective Grid Deco -->
+            <div class="section-grid-deco" aria-hidden="true"></div>
             <div class="container">
                 <div class="section-header reveal-up">
                     <span class="subtitle" data-i18n="expJourney">Journey</span>
@@ -320,6 +337,8 @@
 
         <!-- Projects Section -->
         <section id="projects" class="projects">
+            <!-- CSS Star Field -->
+            <div class="section-stars" aria-hidden="true"></div>
             <div class="container">
                 <div class="section-header reveal-up">
                     <span class="subtitle" data-i18n="projSubtitle">Portfolio</span>
@@ -441,19 +460,19 @@
     </main>
 
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo" style="display: flex; align-items: center; gap: 8px;">
-                    <img src="assets/images/logo_d.png" alt="Dat Logo" style="height: 28px; width: 28px; border-radius: 4px; filter: grayscale(100%) brightness(200%);">
-                    Portfolio <span>HO TIEN DAT</span>
-                </div>
-                <div class="social-links">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/htdat117" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                </div>
+        <div class="container" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding: 24px 0;">
+            <div class="footer-logo" style="display: flex; align-items: center; gap: 8px;">
+                <img src="assets/images/logo_d.png" alt="Dat Logo" style="height: 28px; width: 28px; border-radius: 4px; filter: grayscale(100%) brightness(200%);">
+                Portfolio <span>HO TIEN DAT</span>
             </div>
-            <div class="copyright">
-                <p data-i18n="footerCopy">&copy; 2026 HO TIEN DAT. All rights reserved.</p>
+            
+            <div class="copyright" style="margin: 0; padding: 0;">
+                <p data-i18n="footerCopy" style="margin: 0;">&copy; 2026 HO TIEN DAT. All rights reserved.</p>
+            </div>
+
+            <div class="social-links" style="margin: 0;">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/htdat117" aria-label="GitHub"><i class="fab fa-github"></i></a>
             </div>
         </div>
     </footer>
@@ -461,6 +480,8 @@
     <!-- Custom JS -->
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
+    <!-- Three.js 3D Scene -->
+    <script src="js/three-scene.js"></script>
 
     <!-- Resume PDF Modal -->
     <div id="resumeModal" class="resume-modal" onclick="closeResumeOnBg(event)">
